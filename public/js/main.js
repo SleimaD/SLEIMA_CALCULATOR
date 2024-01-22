@@ -19,13 +19,13 @@ buttons.forEach(button => {
       case '=':
         //? Evaluate the expression in the output
         try {
-          output.innerText = eval(output.innerText);
+          output.innerText = Function("return " + output.innerText)();
         } catch (error) {
           output.innerText = 'Error';
         }
         break;
       default:
-        //? Append the button value to the output
+        //? add the button value to the output
         output.innerText += value;
     }
  });
